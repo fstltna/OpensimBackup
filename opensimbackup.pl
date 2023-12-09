@@ -1,16 +1,16 @@
 #!/usr/bin/perl
 
 # Set these for your situation
-my $OPENSIMDIR = "/root/opensim";
-my $BACKUPDIR = "/root/backups";
+my $OPENSIMDIR = "/home/osowner/opensim";
+my $BACKUPDIR = "/home/osowner/backups";
 my $TARCMD = "/bin/tar czf";
-my $VERSION = "1.0";
+my $VERSION = "1.1";
 
 #-------------------
 # No changes below here...
 #-------------------
 
-print "SyncBackup - back up your Synchronet BBS - version $VERSION\n";
+print "OpensimBackup - back up your Opensim Server - v$VERSION\n";
 print "======================================================\n";
 
 if (! -d $BACKUPDIR)
@@ -20,7 +20,7 @@ if (! -d $BACKUPDIR)
 }
 print "Moving existing backups: ";
 
-if (-f "$BACKUPDIR/citbackup-5.tgz")
+if (-f "$BACKUPDIR/opensimbackup-5.tgz")
 {
 	unlink("$BACKUPDIR/opensimbackup-5.tgz")  or warn "Could not unlink $BACKUPDIR/opensimbackup-5.tgz: $!";
 }
